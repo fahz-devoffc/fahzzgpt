@@ -1,0 +1,8 @@
+{
+  "name": "FahzGPT",
+  "description": "FahzGPT oleh Fahz-Team OFFC.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
