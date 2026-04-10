@@ -1,208 +1,63 @@
-<!DOCTYPE html>
 
-<html class="dark" lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface": "#0b1326",
-                    "primary-fixed": "#dde1ff",
-                    "outline-variant": "#454651",
-                    "surface-dim": "#0b1326",
-                    "on-tertiary-fixed-variant": "#930013",
-                    "surface-container-highest": "#2d3449",
-                    "secondary": "#b7c8e1",
-                    "on-secondary": "#213145",
-                    "secondary-container": "#3a4a5f",
-                    "tertiary-fixed-dim": "#ffb3ad",
-                    "on-tertiary-fixed": "#410004",
-                    "inverse-surface": "#dae2fd",
-                    "surface-container-low": "#131b2e",
-                    "on-error-container": "#ffdad6",
-                    "on-secondary-fixed-variant": "#38485d",
-                    "outline": "#8f909c",
-                    "on-surface": "#dae2fd",
-                    "tertiary-container": "#610009",
-                    "surface-bright": "#31394d",
-                    "surface-container": "#171f33",
-                    "on-secondary-container": "#a9bad3",
-                    "surface-variant": "#2d3449",
-                    "on-secondary-fixed": "#0b1c30",
-                    "on-primary-fixed": "#001453",
-                    "tertiary-fixed": "#ffdad7",
-                    "background": "#0b1326",
-                    "primary-container": "#00227a",
-                    "primary": "#b8c4ff",
-                    "surface-tint": "#b8c4ff",
-                    "on-background": "#dae2fd",
-                    "primary-fixed-dim": "#b8c4ff",
-                    "on-primary-fixed-variant": "#173bab",
-                    "inverse-on-surface": "#283044",
-                    "surface-container-high": "#222a3d",
-                    "on-tertiary-container": "#ff5b57",
-                    "on-error": "#690005",
-                    "on-surface-variant": "#c5c5d3",
-                    "surface-container-lowest": "#060e20",
-                    "inverse-primary": "#3755c3",
-                    "tertiary": "#ffb3ad",
-                    "on-primary-container": "#708cfd",
-                    "on-tertiary": "#68000a",
-                    "secondary-fixed": "#d3e4fe",
-                    "secondary-fixed-dim": "#b7c8e1",
-                    "on-primary": "#002584",
-                    "error": "#ffb4ab",
-                    "error-container": "#93000a"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "fontFamily": {
-                    "headline": ["Space Grotesk"],
-                    "body": ["Manrope"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-      body {
-        background-color: #0b1326;
-        color: #dae2fd;
-        font-family: 'Manrope', sans-serif;
-      }
-      .intelligence-pulse {
-        width: 8px;
-        height: 8px;
-        background-color: #b8c4ff;
-        border-radius: 50%;
-        box-shadow: 0 0 4px 2px rgba(0, 34, 122, 0.6);
-      }
-      .glass-card {
-        background: rgba(45, 52, 73, 0.4);
-        backdrop-filter: blur(20px);
-      }
-      .gradient-cta {
-        background: linear-gradient(135deg, #b8c4ff 0%, #00227a 100%);
-      }
-    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FahzGPT | Powered by Fahz-Team OFFC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0d0d;
+      color: #f8fafc;
+      margin: 0;
+    }
+    .vikey-gradient {
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    @keyframes rotate3d {
+      0% { transform: perspective(1000px) rotateY(0deg); }
+      100% { transform: perspective(1000px) rotateY(360deg); }
+    }
+    .animate-rotate-3d {
+      animation: rotate3d 8s linear infinite;
+      transform-style: preserve-3d;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.3"
+  }
+}
+</script>
 </head>
-<body class="min-h-screen flex flex-col">
-<!-- TopAppBar -->
-<header class="w-full top-0 sticky bg-[#0b1326] z-50">
-<nav class="flex justify-between items-center px-8 py-4 w-full bg-[#131b2e]">
-<div class="flex items-center gap-4">
-<span class="text-2xl font-bold tracking-tighter text-[#b8c4ff] font-['Space_Grotesk']">FahzGPT</span>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden md:flex gap-6 items-center">
-<span class="material-symbols-outlined text-[#b7c8e1] cursor-pointer hover:bg-[#222a3d] transition-colors duration-300 p-2 rounded-full" data-icon="help">help</span>
-<span class="material-symbols-outlined text-[#b7c8e1] cursor-pointer hover:bg-[#222a3d] transition-colors duration-300 p-2 rounded-full" data-icon="language">language</span>
-</div>
-<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high">
-<img alt="User profile" data-alt="professional male portrait with soft studio lighting on a neutral dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi8Ln05aUTsRGTADWKU9mViRpK5E-ZfkJjvHp5odPyDi8le6jmGZXILsfahqG_wCmw-q_FztTqabAvBDSUMhKhpzTThon-ErXW-x2M2_PuM8g4aJUc8xxXyp8i4_FfA4R8jUbI-Ki4xC1hf6bDqHeGaUt4-SrixRzfgNa3uGkXLfZ-kuOUnDAZTErGcNHp9bnFeNb5tpUCPrgaMYbevK4iMlbEVX8US_1DrBNjrlBjHRMUY66-zj4LHYfm4PewuSdQCySvbMuv5Pc"/>
-</div>
-</div>
-</nav>
-</header>
-<main class="flex-grow flex items-center justify-center px-6 py-12">
-<div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-<!-- Hero Illustration Section -->
-<div class="md:col-span-5 order-2 md:order-1 flex justify-center">
-<div class="relative w-full aspect-square max-w-sm">
-<div class="absolute inset-0 rounded-full bg-primary/5 blur-3xl"></div>
-<div class="relative glass-card rounded-full p-12 border border-outline-variant/15 flex items-center justify-center">
-<div class="text-center">
-<span class="material-symbols-outlined text-tertiary text-9xl leading-none opacity-80" data-icon="construction" style="font-variation-settings: 'FILL' 0, 'wght' 200;">construction</span>
-<div class="mt-6 flex items-center justify-center gap-3">
-<div class="intelligence-pulse"></div>
-<span class="font-label text-xs uppercase tracking-[0.2em] text-primary/60">System Maintenance</span>
-</div>
-</div>
-</div>
-<!-- Decorative Elements -->
-<div class="absolute -top-4 -right-4 w-24 h-24 glass-card rounded-xl border border-outline-variant/15 flex items-center justify-center rotate-12">
-<span class="material-symbols-outlined text-secondary text-4xl" data-icon="precision_manufacturing">precision_manufacturing</span>
-</div>
-<div class="absolute -bottom-8 -left-8 w-32 h-32 glass-card rounded-full border border-outline-variant/15 flex items-center justify-center -rotate-12">
-<span class="material-symbols-outlined text-primary text-5xl" data-icon="database_off">database_off</span>
-</div>
-</div>
-</div>
-<!-- Content Section -->
-<div class="md:col-span-7 order-1 md:order-2 space-y-8">
-<div class="space-y-4">
-<div class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/20">
-<span class="material-symbols-outlined text-tertiary text-sm mr-2" data-icon="error">error</span>
-<span class="font-label text-[10px] uppercase tracking-widest text-tertiary font-semibold">Service Interruption</span>
-</div>
-<h1 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-on-surface leading-tight">
-                        Maaf, FahzGPT Saat ini sedang tidak dapat digunakan, karna sedang dalam perbaikan
-                    </h1>
-</div>
-<div class="space-y-6">
-<p class="font-body text-lg md:text-xl text-secondary leading-relaxed max-w-2xl">
-                        Layanan Dinonaktifkan, Website FahzGPT sedang mengalami gangguan pada Web Chat Service, harap menunggu beberapa waktu sampai website kembali, untuk masalah lebih lanjut harap hubungi
-                    </p>
-<div class="flex flex-col sm:flex-row gap-4 pt-4">
-<a class="gradient-cta px-8 py-4 rounded-md font-label font-bold text-on-primary-fixed text-sm uppercase tracking-wider flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-lg shadow-primary-container/20" href="https://fahz-developer/report/laporvirus.html">
-<span>Tekan tombol untuk menghubungi</span>
-<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
-</a>
-<button class="bg-surface-container-high px-8 py-4 rounded-md font-label font-bold text-primary text-sm uppercase tracking-wider border border-outline-variant/15 hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-3">
-<span class="material-symbols-outlined text-lg" data-icon="description">description</span>
-<span>Documentation</span>
-</button>
-</div>
-</div>
-<!-- Status Ticker -->
-<div class="pt-12 border-t border-outline-variant/10 grid grid-cols-2 md:grid-cols-3 gap-8">
-<div>
-<span class="block font-label text-[10px] uppercase tracking-widest text-outline mb-2">API Gateway</span>
-<div class="flex items-center gap-2">
-<div class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(184,196,255,0.6)]"></div>
-<span class="font-body text-sm font-medium text-on-surface">Operational</span>
-</div>
-</div>
-<div>
-<span class="block font-label text-[10px] uppercase tracking-widest text-outline mb-2">Chat Engine</span>
-<div class="flex items-center gap-2">
-<div class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_rgba(255,179,173,0.6)]"></div>
-<span class="font-body text-sm font-medium text-tertiary">Maintenance</span>
-</div>
-</div>
-<div class="hidden md:block">
-<span class="block font-label text-[10px] uppercase tracking-widest text-outline mb-2">Data Clusters</span>
-<div class="flex items-center gap-2">
-<div class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(184,196,255,0.6)]"></div>
-<span class="font-body text-sm font-medium text-on-surface">Stable</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="w-full border-t border-[#454651]/15 bg-[#0b1326]">
-<div class="flex flex-col md:flex-row justify-between items-center px-12 py-8 w-full gap-4">
-<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#b7c8e1]/60">© 2026 FahzGPT Intelligence Systems</p>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#b7c8e1]/60 hover:text-[#b8c4ff] underline decoration-[#b8c4ff]/30 transition-all duration-200" href="#">System Status</a>
-<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#b7c8e1]/60 hover:text-[#b8c4ff] underline decoration-[#b8c4ff]/30 transition-all duration-200" href="#">Contact Support</a>
-<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#b7c8e1]/60 hover:text-[#b8c4ff] underline decoration-[#b8c4ff]/30 transition-all duration-200" href="#">Documentation</a>
-<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#b7c8e1]/60 hover:text-[#b8c4ff] underline decoration-[#b8c4ff]/30 transition-all duration-200" href="#">Terms of Service</a>
-</div>
-</div>
-</footer>
-</body></html>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
